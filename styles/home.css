@@ -1,0 +1,87 @@
+body {
+  background-image: url("../assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.main-content {
+  --gap: 2rem;
+  margin-block-start: max(10rem, 30vh);
+  padding: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Text on Left */
+.main-content main {
+  --gap: 0.5rem;
+  grid-column: 1;
+  justify-self: center;
+  flex-direction: column;
+  color: hsl(var(--primary-clr));
+}
+
+.main-content main h1 {
+  color: hsl(var(--text-clr));
+}
+
+.catch-phrase {
+  text-transform: uppercase;
+  font-family: var(--ff-main-condensed);
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 4.72px;
+}
+
+.content {
+  max-width: 45ch;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.7;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+/* Button */
+.main-btn {
+  grid-column: 2;
+  align-self: end;
+  justify-self: center;
+}
+
+.main-btn .circle-btn {
+  --dimension: 16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: hsl(var(--background-clr));
+  font-size: 32px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.main-btn .circle-btn:after {
+  content: "";
+  width: var(--dimension);
+  height: var(--dimension);
+
+  position: absolute;
+  inset: 0 0 0 0;
+  border-radius: 50%;
+  background-color: hsl(var(--background-clr) / 0.35);
+  transition: transform 300ms ease-in-out;
+  transform-origin: center;
+  z-index: -1;
+}
+
+@supports (backdrop-filter: blur(0.25rem)) {
+  .main-btn .circle-btn:after {
+    background-color: hsl(var(--text-clr) / 10%);
+    backdrop-filter: blur(0.15rem);
+  }
+}
+
+.main-btn:hover .circle-btn:after {
+  transform: scale(1.4);
+}
