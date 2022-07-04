@@ -1,0 +1,95 @@
+body {
+  background-image: url("../assets/destination/background-destination-desktop.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.content {
+  grid-template-rows: max-content auto;
+  grid-template-columns: auto repeat(2, max-content) auto;
+  row-gap: 1.5rem;
+  column-gap: 5rem;
+  margin-block-start: max(5rem, 5vh);
+  padding: 2rem;
+}
+
+.curr-dest {
+  grid-area: 1 / 2 / 2 / 4;
+  color: hsl(var(--text-clr));
+  font-family: var(--ff-main-condensed);
+  font-size: 28px;
+  letter-spacing: 4.72px;
+}
+
+.curr-dest span {
+  color: hsl(var(--text-clr) / 50%);
+  font-weight: bold;
+}
+
+/* Destination Image Styling */
+.main-img {
+  grid-area: 2 / 2 / 3 / 3;
+  align-self: center;
+  justify-self: center;
+  padding: 3rem;
+}
+
+/* Main text content on page */
+.main-content {
+  grid-area: 2 / 3 / 3 / 4;
+  flex-direction: column;
+  color: hsl(var(--primary-clr));
+}
+
+/* Destination Navigation */
+.main-content > .main-nav ul {
+  --pad-bot: 1rem;
+  padding-inline: 0.25rem;
+
+  background-color: transparent;
+}
+
+@supports (backdrop-filter: blur(0.25rem)) {
+  .main-content > .main-nav ul {
+    backdrop-filter: blur(0);
+  }
+}
+
+.main-content > .main-nav li {
+  --hover-clr: hsl(var(--primary-clr) / 50%);
+  color: hsl(var(--primary-clr));
+}
+
+.main-content > .main-nav li.active {
+  --hover-clr: hsl(var(--text-clr));
+  color: hsl(var(--text-clr));
+}
+
+/* Destination Header */
+.main-content h2 {
+  color: hsl(var(--text-clr));
+}
+
+.text-content {
+  max-width: 43ch;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.7;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+/* Horizontal Line Element */
+.horiz-line {
+  border-color: #383b4b;
+}
+
+/* Info About Destination */
+.info {
+  --gap: 5rem;
+}
+
+.info .subheading-1 {
+  color: hsl(var(--text-clr));
+}
