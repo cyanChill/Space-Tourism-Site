@@ -1,0 +1,89 @@
+body {
+  background-image: url("../assets/technology/background-technology-desktop.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.content {
+  --gap: 3rem;
+  height: 100%;
+  flex-direction: column;
+  margin-block-start: max(5rem, 5vh);
+  padding: 2rem 0 0 10rem;
+}
+
+.curr-page {
+  color: hsl(var(--text-clr));
+  font-family: var(--ff-main-condensed);
+  font-size: 28px;
+  letter-spacing: 4.72px;
+}
+
+.curr-page span {
+  color: hsl(var(--text-clr) / 50%);
+  font-weight: bold;
+}
+
+.right-container {
+  justify-content: space-between;
+}
+
+/* Main text content on page */
+.main-content {
+  --gap: 5rem;
+  align-self: center;
+  color: hsl(var(--primary-clr));
+}
+
+/* Technology Navigation Buttons */
+.tech-action {
+  --gap: 2rem;
+  flex-direction: column;
+}
+
+.tech-action .circle-btn.outline {
+  --dimension: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  color: hsl(var(--text-clr));
+
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.tech-action .circle-btn.active {
+  background-color: hsl(var(--text-clr));
+  color: hsl(var(--background-clr));
+}
+
+.tech-action .circle-btn:hover {
+  border: 1px solid hsl(var(--text-clr));
+}
+
+/* Page Content Header */
+.tech-id {
+  padding-block-end: 2rem;
+}
+
+.header-start {
+  font-family: var(--ff-main-condensed);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+}
+
+.main-content h3 {
+  color: hsl(var(--text-clr));
+}
+
+.text-content {
+  max-width: 445px;
+  line-height: 1.7;
+  font-size: 18px;
+  font-weight: 200;
+  padding-bottom: 2rem;
+}

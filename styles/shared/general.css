@@ -114,3 +114,8 @@ nav {
   text-decoration: none;
   text-align: center;
 }
+
+.circle-btn.outline {
+  background-color: transparent;
+  border: 1px solid hsl(var(--text-clr) / 25%);
+}
