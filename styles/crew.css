@@ -1,0 +1,110 @@
+body {
+  background-image: url("../assets/crew/background-crew-desktop.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.content {
+  height: 100%;
+  justify-content: space-between;
+  margin-block-start: max(5rem, 5vh);
+  padding: 2rem 2rem 0 10rem;
+}
+
+.left-container {
+  min-height: calc(100vh - 115px - max(5rem, 5vh) - 2rem);
+}
+
+.curr-page {
+  color: hsl(var(--text-clr));
+  font-family: var(--ff-main-condensed);
+  font-size: 28px;
+  letter-spacing: 4.72px;
+  padding-block-end: 7rem;
+}
+
+.curr-page span {
+  color: hsl(var(--text-clr) / 50%);
+  font-weight: bold;
+}
+
+/* Destination Image Styling */
+.main-img {
+  align-self: end;
+}
+
+/* Main text content on page */
+.main-content {
+  height: calc(100vh - 115px - max(5rem, 5vh) - 2rem - 146px);
+  max-width: 700px;
+  flex-direction: column;
+  justify-content: space-between;
+  color: hsl(var(--primary-clr));
+}
+
+/* Person Name */
+.crew-member-id {
+  padding-block-end: 2rem;
+}
+
+.main-content h3 {
+  color: hsl(var(--text-clr));
+}
+
+.text-content {
+  max-width: 445px;
+  line-height: 1.7;
+  font-size: 18px;
+  font-weight: 200;
+  padding-bottom: 2rem;
+}
+
+.crew-action {
+  padding-block: 5rem;
+}
+
+.crew-action .circle-btn {
+  --dimension: 1rem;
+  --hover-clr: hsl(var(--text-clr) / 50%);
+  background-color: hsl(var(--text-clr) / 17.44%);
+}
+
+.crew-action .circle-btn.active {
+  --hover-clr: hsl(var(--text-clr));
+}
+
+.crew-action .circle-btn:hover,
+.crew-action .circle-btn.active {
+  background-color: var(--hover-clr);
+}
+
+/* @media (max-width: 1268px) {
+  .content {
+    grid-template-columns: max-content auto;
+    column-gap: 0.5rem;
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .curr-page {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .main-img {
+    grid-area: 2 / 1 / 3 / 2;
+    padding: 0;
+  }
+
+  .main-content {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+} */
+
+/* Tablet Layout */
+@media (max-width: 768px) {
+}
+
+/* Mobile Layout */
+@media (max-width: 568px) {
+}
