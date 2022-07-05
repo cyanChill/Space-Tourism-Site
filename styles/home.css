@@ -77,3 +77,59 @@ body {
 .main-btn:hover .circle-btn:after {
   transform: scale(1.4);
 }
+
+/* Tablet Layout */
+@media (max-width: 768px) {
+  body {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+
+  .main-content {
+    min-height: calc(100vh - 83px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-block: 4rem;
+    text-align: center;
+  }
+
+  .main-content main {
+    justify-content: ceenter;
+  }
+
+  .content {
+    max-width: 30rem;
+    text-align: center;
+  }
+
+  .main-btn {
+    align-self: center;
+    justify-self: center;
+    margin-top: auto;
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 468px) {
+  body {
+    background-image: url("../assets/home/background-home-mobile.jpg");
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .main-btn .circle-btn {
+    --dimension: 12rem;
+  }
+}

@@ -87,3 +87,116 @@ body {
   font-weight: 200;
   padding-bottom: 2rem;
 }
+
+@media (max-width: 1168px) {
+  .content {
+    justify-content: center;
+    padding-inline-start: 1rem;
+  }
+
+  .main-content {
+    --gap: 2rem;
+  }
+
+  .main-img {
+    min-width: 300px;
+    align-items: center;
+  }
+
+  .main-img img {
+    width: 100%;
+  }
+}
+
+/* Tablet Layout */
+@media (max-width: 768px) {
+  body {
+    background-image: url("../assets/technology/background-technology-tablet.jpg");
+  }
+
+  .content {
+    --gap: 2rem;
+    min-height: calc(100vh - 83px);
+    max-width: initial;
+    justify-content: initial;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  .curr-page {
+    padding: 0 1rem;
+  }
+
+  .right-container {
+    flex-direction: column-reverse;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .tech-action {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .main-content > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tech-id p {
+    font-size: 16px;
+  }
+
+  .tech-id h3 {
+    font-size: 40px;
+  }
+
+  .text-content {
+    padding: 0;
+  }
+
+  .main-img {
+    min-width: initial;
+    max-width: initial;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 468px) {
+  body {
+    background-image: url("../assets/technology/background-technology-mobile.jpg");
+  }
+
+  .curr-page {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .tech-action .circle-btn.outline {
+    --dimension: 3rem;
+  }
+
+  .tech-id p {
+    font-size: 14px;
+  }
+
+  .tech-id h3 {
+    font-size: 24px;
+  }
+
+  .text-content {
+    font-size: 15px;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}

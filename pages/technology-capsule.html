@@ -15,16 +15,20 @@
     <link rel="stylesheet" href="../styles/shared/main-navigation.css" />
     <link rel="stylesheet" href="../styles/technology.css" />
 
+    <script src="../scripts/index.js" defer></script>
+
     <title>Frontend Mentor | Space tourism website</title>
   </head>
   <body>
     <nav class="flex main-nav">
       <div class="logo"><img src="../assets/shared/logo.svg" alt="logo" /></div>
 
+      <button id="nav-control" data-toggle="false"></button>
+
       <div class="flex action">
         <div class="line"></div>
 
-        <ul class="flex">
+        <ul id="nav-menu" class="flex" data-visible="false">
           <li>
             <a href="./index.html"><span>00</span>Home</a>
           </li>
@@ -75,10 +79,16 @@
         </main>
 
         <div class="main-img">
-          <img
-            src="../assets/technology/image-space-capsule-portrait.jpg"
-            alt="picture of space capsule"
-          />
+          <picture>
+            <source
+              srcset="../assets/technology/image-space-capsule-portrait.jpg"
+              media="(min-width: 768px)"
+            />
+            <img
+              src="../assets/technology/image-space-capsule-landscape.jpg"
+              alt="picture of space capsule"
+            />
+          </picture>
         </div>
       </div>
     </section>
