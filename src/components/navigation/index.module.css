@@ -1,0 +1,199 @@
+/* Mobile-First Approach*/
+.main-nav {
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(var(--text-clr));
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 2rem;
+  height: auto;
+  margin: 1rem;
+}
+
+.nav-control {
+  cursor: pointer;
+  width: 2rem;
+  aspect-ratio: 1;
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+
+  background-color: transparent;
+  background-image: url("/public/assets/shared/icon-hamburger.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+}
+
+.nav-control[data-toggle="true"] {
+  background-image: url("/public/assets/shared/icon-close.svg");
+}
+
+/* Contains the line + Navigation Buttons */
+.action {
+  --gap: 0;
+  width: 100%;
+  align-items: center;
+}
+
+/* Horizontal Line Left of Nav */
+.line {
+  display: none;
+  flex: 1;
+  width: 100%;
+  height: 1px;
+  transform: translateX(2rem);
+  background-color: hsl(var(--text-clr) / 25.15%);
+  z-index: 2;
+}
+
+/* Container containing list of links */
+.nav-menu {
+  --gap: 2rem;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  padding: min(30vh, 10rem) 1.25rem;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+  list-style: none;
+  background-color: hsl(var(--background-clr) / 0.35);
+  z-index: 1000;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  .nav-menu {
+    background-color: hsl(var(--text-clr) / 0.05);
+    backdrop-filter: blur(1rem);
+  }
+}
+
+.nav-menu[data-visible="true"] {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Nav link list item */
+.nav-menu li {
+  --hover-clr: hsl(var(--text-clr) / 50%);
+  min-width: 200px;
+  position: relative;
+  font-size: 16px;
+}
+
+.nav-menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-menu a.active {
+  --hover-clr: hsl(var(--text-clr));
+}
+
+.nav-menu a:after {
+  display: none;
+  content: "";
+  width: 100%;
+  height: 3px;
+
+  position: absolute;
+  left: 0;
+  bottom: calc(-1 * var(--pad-bot));
+  background-color: var(--hover-clr);
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform 300ms ease-out;
+}
+
+.nav-menu a:hover:after,
+.nav-menu a.active:after {
+  transform: scaleX(1);
+}
+
+/* Contains the Numbers in the links */
+.nav-menu span {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Tablet Layout */
+@media (min-width: 468px) {
+  .logo {
+    margin-block: 0;
+  }
+
+  .nav-control {
+    display: none;
+  }
+
+  .action {
+    justify-content: flex-end;
+  }
+
+  .nav-menu {
+    --gap: 0;
+    --pad-bot: 2rem;
+    min-height: initial;
+    width: 100%;
+    max-width: 568px;
+    flex-direction: row;
+    justify-content: space-between;
+    position: initial;
+
+    padding: var(--pad-bot);
+    opacity: 1;
+    transform: translateX(0%);
+    z-index: initial;
+  }
+
+  .nav-menu li {
+    min-width: initial;
+    font-size: initial;
+  }
+
+  .nav-menu a:after {
+    display: initial;
+  }
+
+  .nav-menu span {
+    display: none;
+  }
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .logo {
+    margin: 2rem;
+  }
+
+  .action {
+    justify-content: initial;
+  }
+
+  .line {
+    display: initial;
+  }
+
+  .nav-menu {
+    --gap: 3rem;
+    width: initial;
+    max-width: initial;
+    padding: var(--pad-bot) clamp(3rem, 8vw, 7rem);
+  }
+
+  .nav-menu span {
+    display: initial;
+  }
+}
