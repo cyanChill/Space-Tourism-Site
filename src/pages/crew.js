@@ -1,28 +1,16 @@
 import { useState, useEffect } from "react";
 
 import Data from "../data.json";
-import LoadingSpinner from "../components/ui/loadingSpinner";
 import styles from "../styles/crew.module.css";
 
 const CrewPage = () => {
   const [subPg, setSubPg] = useState(0);
-  const [loadingData, setLoadingData] = useState(true);
-  const [currData, setCurrData] = useState(Data.crew[0]);
+  const [currData] = useState(Data.crew);
 
   /* Set Background Image */
   useEffect(() => {
     document.body.classList = "crew";
   }, []);
-
-  useEffect(() => {
-    setLoadingData(true);
-    setCurrData(Data.crew[subPg]);
-    setLoadingData(false);
-  }, [subPg]);
-
-  if (loadingData) {
-    return <LoadingSpinner />;
-  }
 
   return (
     <section className={`flex ${styles["content-wrapper"]}`}>
@@ -33,19 +21,19 @@ const CrewPage = () => {
       <div className={`flex ${styles["content"]}`}>
         <div className={`flex ${styles["member-img"]}`}>
           <img
-            src={currData.images.webp}
-            alt={`${currData.role} ${currData.name}`}
+            src={currData[subPg].images.webp}
+            alt={`${currData[subPg].role} ${currData[subPg].name}`}
           />
         </div>
 
         <div className={`flex ${styles["nonImg-content"]}`}>
           <div className={`flex ${styles["main-content"]}`}>
             <h2 className={`flex ${styles["member-info"]}`}>
-              <span>{currData.role}</span>
-              <span>{currData.name}</span>
+              <span>{currData[subPg].role}</span>
+              <span>{currData[subPg].name}</span>
             </h2>
 
-            <main className={styles.bio}>{currData.bio}</main>
+            <main className={styles.bio}>{currData[subPg].bio}</main>
           </div>
 
           <div className={`flex ${styles["member-switcher"]}`}>
