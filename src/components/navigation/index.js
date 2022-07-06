@@ -18,6 +18,11 @@ const MainNav = () => {
     }
   };
 
+  const closeNavMenu = () => {
+    navMenuRef.current.setAttribute("data-visible", false);
+    btnRef.current.setAttribute("data-toggle", false);
+  };
+
   return (
     <nav className={`flex ${styles["main-nav"]}`}>
       <div className={styles.logo}>
@@ -45,6 +50,7 @@ const MainNav = () => {
               className={({ isActive }) =>
                 isActive ? styles.active : undefined
               }
+              onClick={closeNavMenu}
             >
               <span>00</span>Home
             </NavLink>
@@ -55,6 +61,7 @@ const MainNav = () => {
               className={({ isActive }) =>
                 isActive ? styles.active : undefined
               }
+              onClick={closeNavMenu}
             >
               <span>01</span>Destination
             </NavLink>
@@ -65,6 +72,7 @@ const MainNav = () => {
               className={({ isActive }) =>
                 isActive ? styles.active : undefined
               }
+              onClick={closeNavMenu}
             >
               <span>02</span>Crew
             </NavLink>
@@ -75,6 +83,7 @@ const MainNav = () => {
               className={({ isActive }) =>
                 isActive ? styles.active : undefined
               }
+              onClick={closeNavMenu}
             >
               <span>03</span>Technology
             </NavLink>
