@@ -1,11 +1,148 @@
+/* 
+
+  TODO: THIS IS TEMPORARY -- REMOVE AFTER DONE 
+
+*/
+body {
+  color: white;
+}
+
 /* Mobile-First Approach*/
+.content-wrapper {
+  min-height: 100%;
+  width: 100%;
+  max-width: var(--reasonable-max-app-width);
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Contains Everything besides the explore button */
+.main-content {
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  color: hsl(var(--primary-clr));
+}
+
+.catch-phrase {
+  font-size: 16px;
+  font-family: var(--ff-main-condensed);
+  letter-spacing: 2.7px;
+}
+
+.main-content h1 {
+  font-size: 80px;
+  font-weight: normal;
+  font-family: var(--ff-heading);
+
+  color: hsl(var(--text-clr));
+}
+
+.text-content {
+  font-size: 15px;
+  text-transform: none;
+  line-height: 1.6;
+}
+
+/* Explore Button */
+.main-btn {
+  margin-top: 3rem;
+}
+
+.explore-btn {
+  --dimension: 10rem;
+  cursor: pointer;
+  width: var(--dimension);
+  height: var(--dimension);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  color: hsl(var(--background-clr));
+  background-color: hsl(var(--text-clr));
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: var(--ff-heading);
+  text-align: center;
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+}
+
+.explore-btn:after {
+  content: "";
+  width: var(--dimension);
+  height: var(--dimension);
+
+  position: absolute;
+  inset: 0 0 0 0;
+  border-radius: 50%;
+  background-color: hsl(var(--background-clr) / 0.35);
+  transition: transform 300ms ease-in-out;
+  transform-origin: center;
+  z-index: -1;
+}
+
+@supports (backdrop-filter: blur(0.25rem)) {
+  .explore-btn:after {
+    background-color: hsl(var(--text-clr) / 10%);
+    backdrop-filter: blur(0.15rem);
+  }
+}
+
+.explore-btn:hover:after {
+  transform: scale(1.4);
+}
 
 /* Tablet Layout */
 @media (min-width: 468px) {
+  .catch-phrase {
+    font-size: 20px;
+  }
 
+  .main-content h1 {
+    font-size: 150px;
+  }
+
+  .text-content {
+    max-width: 444px;
+    font-size: 16px;
+  }
+
+  .explore-btn {
+    --dimension: 15rem;
+    font-size: 32px;
+  }
 }
 
 /* Desktop Layout */
 @media (min-width: 768px) {
+  .content-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-block-start: max(10rem, 30vh);
+  }
 
+  .main-content {
+    text-align: start;
+  }
+
+  .catch-phrase {
+    width: 100%;
+    font-size: 28px;
+  }
+
+  .text-content {
+    font-size: 18px;
+  }
+
+  .explore-btn {
+    --dimension: 17.5rem;
+  }
 }

@@ -28,6 +28,7 @@ body {
   font-family: var(--ff-main);
   overflow-x: hidden;
 
+  background: hsl(var(--background-clr));
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -41,50 +42,23 @@ body {
 }
 
 /* Heading Styling */
-.h1,
-.h2,
-.h3,
-.h4,
+
 .subheading-1 {
   font-family: var(--ff-heading);
 }
 
-.h5,
+
 .subheading-2 {
   font-family: var(--ff-main-condensed);
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
+
 .subheading-1,
 .subheading-2 {
   font-weight: normal;
   text-transform: uppercase;
 }
 
-.h1 {
-  font-size: 150px;
-}
-
-.h2 {
-  font-size: 100px;
-}
-
-.h3 {
-  font-size: 56px;
-}
-
-.h4 {
-  font-size: 32px;
-}
-
-.h5 {
-  font-size: 28px;
-  letter-spacing: 4.72px;
-}
 
 .subheading-1 {
   font-size: 28px;
@@ -106,10 +80,6 @@ nav {
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
-}
-
-.grid {
-  display: grid;
 }
 
 .circle-btn {
