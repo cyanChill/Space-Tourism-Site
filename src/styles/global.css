@@ -133,7 +133,7 @@ nav {
 
   text-decoration: none;
   text-align: center;
-  transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
 }
 
 .circle-btn:hover {
@@ -151,7 +151,6 @@ nav {
   background-color: transparent;
   border: 1px solid var(--cb-bkg-norm-clr);
   color: var(--cb-norm-text-clr);
-  transition: border-color 300ms ease-in-out;
 }
 
 .circle-btn.outline:hover {

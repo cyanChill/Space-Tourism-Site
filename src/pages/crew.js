@@ -37,13 +37,13 @@ const CrewPage = () => {
           </div>
 
           <div className={`flex ${styles["member-switcher"]}`}>
-            {[0, 1, 2, 3].map((subPgNum) => (
+            {currData.map((_, idx) => (
               <div
-                key={subPgNum}
+                key={idx}
                 className={`circle-btn ${
-                  subPg === subPgNum ? "active" : undefined
+                  subPg === idx ? "active" : undefined
                 } ${styles["custom-circle"]}`}
-                onClick={() => setSubPg(subPgNum)}
+                onClick={() => setSubPg(idx)}
               />
             ))}
           </div>
