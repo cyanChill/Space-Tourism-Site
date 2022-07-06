@@ -1,1 +1,197 @@
 /* Mobile-First Approach*/
+.content-wrapper {
+  min-height: 100%;
+  width: 100%;
+  max-width: var(--reasonable-max-app-width);
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+/* "03 Space Launch 101" */
+.pg-info {
+  align-self: center;
+  padding-inline: 1rem;
+  font-family: var(--ff-main-condensed);
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+  color: hsl(var(--text-clr));
+}
+
+.pg-info span {
+  color: hsl(var(--text-clr) / 50%);
+  font-weight: bold;
+}
+
+/* Holds everything besides the page header */
+.content {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Technology Image */
+.tech-img {
+  flex: 1;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.tech-img img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Contains the everything else besides the image */
+.nonImg-content {
+  --gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container w/ Buttons to Switch Displayed Technology */
+.tech-switcher {
+  --gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Customizing the Circle Button */
+.custom-circle {
+  --dimension: 2.75rem !important;
+  font-size: 16px;
+}
+
+/* Contains technology name + description */
+.main-content {
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 1rem;
+}
+
+/* Tech Name */
+.tech-info {
+  --gap: 0.25rem;
+  flex-direction: column;
+  align-items: center;
+  font-weight: normal;
+  text-align: center;
+}
+
+.tech-info span {
+  font-family: var(--ff-heading);
+  text-transform: uppercase;
+}
+
+.tech-info span:first-child {
+  font-size: 14px;
+  color: hsl(var(--primary-clr));
+}
+
+.tech-info span:last-child {
+  font-size: 24px;
+  color: hsl(var(--text-clr));
+}
+
+/* Description of technology */
+.description {
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.6;
+  color: hsl(var(--primary-clr));
+}
+
+/* Tablet Layout */
+@media (min-width: 468px) {
+  .pg-info {
+    width: 100%;
+    justify-self: start;
+    font-size: 20px;
+    letter-spacing: 3.38px;
+  }
+
+  .tech-img img {
+    height: 310px;
+  }
+
+  .custom-circle {
+    --dimension: 3.5rem !important;
+    font-size: 24px;
+  }
+
+  .tech-info span:first-child {
+    font-size: 16px;
+  }
+
+  .tech-info span:last-child {
+    font-size: 40px;
+  }
+
+  .description {
+    max-width: 458px;
+    font-size: 16px;
+  }
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .content-wrapper {
+    padding-inline: clamp(1rem, 2vw, 3rem);
+  }
+
+  .pg-info {
+    padding-inline: 0;
+    font-size: 28px;
+    letter-spacing: 4.72px;
+  }
+
+  .content {
+    flex-direction: row-reverse;
+    margin-top: 3rem;
+  }
+
+  .tech-img img {
+    min-height: 375px;
+    height: initial;
+    min-width: 250px;
+  }
+
+  .nonImg-content {
+    flex-direction: row;
+  }
+
+  .main-content {
+    align-items: flex-start;
+  }
+
+  .tech-switcher {
+    width: initial;
+    flex-direction: column;
+  }
+
+  .custom-circle {
+    --dimension: 4rem !important;
+    font-size: 32px;
+  }
+
+  .tech-info {
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .tech-info span:first-child {
+    font-size: clamp(24px, 2.85vw, 32px);
+  }
+
+  .tech-info span:last-child {
+    font-size: clamp(42px, 5vw, 56px);
+  }
+
+  .description {
+    max-width: 470px;
+    font-size: clamp(16px, 2vw, 18px);
+    text-align: start;
+  }
+}
