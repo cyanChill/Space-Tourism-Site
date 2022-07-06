@@ -5,17 +5,21 @@ import HomePage from "./pages/home";
 import DestinationPage from "./pages/destination";
 import CrewPage from "./pages/crew";
 import TechnologyPage from "./pages/technology";
+import ErrorPage from "./pages/error";
 
 const App = () => {
   return (
     <>
       <MainNav />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="destination" element={<DestinationPage />} />
-        <Route path="crew" element={<CrewPage />} />
-        <Route path="technology" element={<TechnologyPage />} />
-      </Routes>
+      <div className="content-wrapper">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="destination" element={<DestinationPage />} />
+          <Route path="crew" element={<CrewPage />} />
+          <Route path="technology" element={<TechnologyPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
     </>
   );
 };

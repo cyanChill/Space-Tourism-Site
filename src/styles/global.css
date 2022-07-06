@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap");
 
 :root {
+  --reasonable-max-app-width: 1200px;
+
   --background-clr: 230 35% 7%; /* A Black */
   --primary-clr: 231 77% 90%; /* Light Lilac */
   --text-clr: 0 0% 100%; /* White */
+
+  --shadow-clr: #383b4b;
 
   --ff-heading: "Bellefair", serif;
   --ff-main: "Barlow", sans-serif;
@@ -23,50 +27,61 @@ body {
   min-height: 100vh;
   font-family: var(--ff-main);
   overflow-x: hidden;
+
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+#root {
+  min-height: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Heading Styling */
-h1,
-h2,
-h3,
-h4,
+.h1,
+.h2,
+.h3,
+.h4,
 .subheading-1 {
   font-family: var(--ff-heading);
 }
 
-h5,
+.h5,
 .subheading-2 {
   font-family: var(--ff-main-condensed);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
 .subheading-1,
 .subheading-2 {
   font-weight: normal;
   text-transform: uppercase;
 }
 
-h1 {
+.h1 {
   font-size: 150px;
 }
 
-h2 {
+.h2 {
   font-size: 100px;
 }
 
-h3 {
+.h3 {
   font-size: 56px;
 }
 
-h4 {
+.h4 {
   font-size: 32px;
 }
 
-h5 {
+.h5 {
   font-size: 28px;
   letter-spacing: 4.72px;
 }
@@ -95,7 +110,6 @@ nav {
 
 .grid {
   display: grid;
-  gap: var(--gap, 1rem);
 }
 
 .circle-btn {
@@ -119,6 +133,7 @@ nav {
 
   text-decoration: none;
   text-align: center;
+  transition: background-color 300ms ease-in-out;
 }
 
 .circle-btn:hover {
@@ -136,6 +151,7 @@ nav {
   background-color: transparent;
   border: 1px solid var(--cb-bkg-norm-clr);
   color: var(--cb-norm-text-clr);
+  transition: border-color 300ms ease-in-out;
 }
 
 .circle-btn.outline:hover {
@@ -147,4 +163,67 @@ nav {
   background-color: var(--cb-bkg-active-clr);
   border-color: var(--cb-bkg-active-clr);
   color: var(--cb-active-text-clr);
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  flex: 1; /* Take remaining space in #root container */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Body Background Image */
+body.home {
+  background-image: url("/public/assets/home/background-home-mobile.jpg");
+}
+
+body.destination {
+  background-image: url("/public/assets/destination/background-destination-mobile.jpg");
+}
+
+body.crew {
+  background-image: url("/public/assets/crew/background-crew-mobile.jpg");
+}
+
+body.technology {
+  background-image: url("/public/assets/technology/background-technology-mobile.jpg");
+}
+
+/* Tablet Layout */
+@media (min-width: 468px) {
+  body.home {
+    background-image: url("/public/assets/home/background-home-tablet.jpg");
+  }
+
+  body.destination {
+    background-image: url("/public/assets/destination/background-destination-tablet.jpg");
+  }
+
+  body.crew {
+    background-image: url("/public/assets/crew/background-crew-tablet.jpg");
+  }
+
+  body.technology {
+    background-image: url("/public/assets/technology/background-technology-tablet.jpg");
+  }
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  body.home {
+    background-image: url("/public/assets/home/background-home-desktop.jpg");
+  }
+
+  body.destination {
+    background-image: url("/public/assets/destination/background-destination-desktop.jpg");
+  }
+
+  body.crew {
+    background-image: url("/public/assets/crew/background-crew-desktop.jpg");
+  }
+
+  body.technology {
+    background-image: url("/public/assets/technology/background-technology-desktop.jpg");
+  }
 }

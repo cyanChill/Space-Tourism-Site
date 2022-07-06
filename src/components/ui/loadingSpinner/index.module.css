@@ -1,0 +1,20 @@
+.spinner {
+  --spinner-base-clr: hsl(var(--text-clr) / 30%);
+  --spinner-clr: hsl(var(--text-clr));
+
+  border-style: solid;
+  border-color: var(--spinner-base-clr);
+  border-top-color: var(--spinner-clr);
+  border-radius: 50%;
+
+  animation: spin 1.5s ease-in-out infinite normal forwards;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
